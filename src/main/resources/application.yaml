@@ -1,3 +1,14 @@
 spring:
   application:
-    name: configserver
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/gastonsbonanno/utn-config-repo
+          default-label: main
+          clone-on-start: true
+          search-paths: configs
+
+server:
+  port: 8888
